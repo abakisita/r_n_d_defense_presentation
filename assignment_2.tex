@@ -1,0 +1,170 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{natbib}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[DMP]{Dynamic Movement Primitives} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Abhishek Padalkar} % Your name
+\institute[HBRS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Hochschule Bonn-Rhein-Sieg \\ % Your institution for the title page
+\medskip
+\textit{abhishek.padalkar@smail.inf.h-brs.com} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\nocite{*}
+\end{frame}
+
+\begin{frame}{Problem addressed}
+\begin{itemize}
+
+\item Exploring knowledge-base representation frameworks for DMPs which allow :
+\begin{itemize}
+\item Representation of DMP's weights, initial condition, goal and scaling parameters. 
+\item Representation of information related to functionality of DMPs. 
+\item Correct combination of DMPs to generate desired trajectory.
+\end{itemize} 
+\item Combining simple dynamic motion primitives for accomplishing a complex task using knowledge-base representation framework. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relevance of the problem addressed}
+\begin{itemize}
+\item Dynamic motion primitives can be used in mobile robots for robust navigation. 
+\item But learning entire motion as a single primitive reduces re-usability of that motion.  
+\item A mobile robot can be benefited from this work as it can use DMP framework for navigation by combining simple motion primitives to navigate along a complex path.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Advantages of Dynamic Motion Primitves}
+\begin{itemize}
+
+\item DMP learns trajectories in terms of attractor landscape of non-linear autonomous differential equations.
+\item Convergence of dynamic motion primitive is guaranteed \cite{schaal2006dynamic}.  
+\item Any arbitrary motion trajectory can be learned. 
+\item Trajectories can be scaled in space as well as in time \cite{schaal2006dynamic,ijspeert2013dynamical}. 
+\item These learned motion primitives can be initialized anywhere in the attractor space \cite{schaal2006dynamic,ijspeert2013dynamical}.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Advantages of Dynamic Motion Primitves}
+\begin{itemize}
+
+\item On-line modifications in trajectory are possible \cite{schaal2006dynamic}. 
+\item Obstacles can be avoided robustly \cite{park2008movement}. 
+\item Re-planning is not needed unless an event causing major disturbance in the environment occurs \cite{park2008movement}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Related Work}
+\begin{itemize}
+\item Schaal et. al\cite{schaal2006dynamic} and Ijspeert et. al\cite{ijspeert2003learning,ijspeert2013dynamical} provide concrete theory and experimental results proving advantages of using DMPs.
+\item Park et. al\cite{park2008movement} proposed method for obstacle avoiding using DMPs and potential fields. 
+\item Lioutikov et. al , Nemec et. al , Park et.al have demonstrated motion sequencing by various methods. \cite{lioutikov2016learning,nemec2012action,park2008movement}
+\item Software package implementing DMP framework is available in Robot Operating System.  
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Deficits}
+\begin{itemize}
+\item All the work done so far provide concrete base to implement DMP for robots. 
+\item But it doesn't solve the problem of obtaining correct combination of simple motion primitives in order to do a particular task.  
+\end{itemize}
+\end{frame}
+
+\bibliography{assignment_2}{}
+\bibliographystyle{plain}
+
+
+
+\end{document} 
